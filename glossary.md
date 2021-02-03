@@ -204,7 +204,7 @@ Digital twins are motivated by outcomes, tailored to use cases, powered by integ
 
 Examples of subsystems of digital twin systems include the virtual representation, synchronization (observation and intervention) mechanism(s), data integration, analysis, visualization, user interfaces, security, etc.
 
-![Picture of digital twin system](DigitalTwinSystems.png)
+![Digital Twin System](images/DigitalTwinSystems.png)
 
 ***Narrower terms***
 
