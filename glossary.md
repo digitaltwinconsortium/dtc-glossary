@@ -24,18 +24,17 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Digital Twin System](#digital-twin-system)
 - [Digital Twin System Feature](#digital-twin-system-feature)
 - [Digital Twin Use Case](#digital-twin-use-case)
-- [Dynamic Model](#dynamic-model)
 - [Human Digital Twin](#human-digital-twin)
 - [Infrastructure Digital Twin](#infrastructure-digital-twin)
 - [Interventional Frequency](#interventional-frequency)
 - [Model](#model)
 - [Modeling Fidelity](#modeling-fidelity)
 - [Observational Frequency](#observational-frequency)
+- [Persistent Model](#persistent-model)
 - [Physical Twin](#physical-twin)
 - [Real-to-virtual synchronization](#real-to-virtual-synchronization)
 - [Service Interface](#service-interface)
 - [Simulation Model](#simulation-model)
-- [Static Model](#static-model)
 - [Subsystems of a Digital Twin System](#subsystems-of-a-digital-twin-system)
 - [Synchronization](#synchronization)
 - [Synchronization Fidelity](#synchronization-fidelity)
@@ -79,7 +78,7 @@ See [Wikipedia's definition of cyber-physical system](https://en.wikipedia.org/w
 
 ## Data Model
 
-> A data model is a [static model](#static-model) of data that describes its structure, datatypes, and meaning.
+> A data model is a [persistent model](#persistent-model) of data that describes its structure, datatypes, and meaning.
 
 A data model will use some __data modeling paradigm__ that defines its approach to __structuring data__. Some examples include:
 
@@ -94,7 +93,7 @@ The __meaning__ of particular data structured according to the data model may be
 
 A given data model may lie somewhere along an __implementation spectrum__. It may be an implementation-neutral "logical" or "conceptual" data model or a database-implementation-specific data model like a SQL database schema. Often, a high-level conceptual data model is exposed through an API, but is mapped to a low-level implementation-specific data model by the software that implements the API.
 
-The __subject matter__ of a data model is a [static digital model](#static-model). In other words, every [static digital model](#static-model) (which consists of particular data) will have a __data model__ that describes the structure and meaning of its digital data.
+The __subject matter__ of a data model is a [persistent model](#persistent-model). In other words, every [persistent model](#persistent-model) (which consists of particular data) will have a __data model__ that describes the structure and meaning of its digital data.
 
 The __medium__ of a "data model" is a data modeling language, which could be graphical (e.g. a whiteboard diagram or an electronic UML diagram) or lexical (e.g. text that is both human-readable and machine readable in a language like SQL Data Definition Language (DDL), Digital Twin Definition Language ([DTDL](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#digital-twins-definition-language)), Web Ontology Language ([OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language)), or many other formats).
 
@@ -103,7 +102,7 @@ The __modeling perspective__ of a "data model" encompasses its data-modeling par
 This figure shows how a [Data Model](#data-model) relates to a [Digital Model](#digital-model) and how both relate to the physical world.
 ![Data Model](images/DataModel.png)
 
-Communication can get tricky when folks use the unqualified term "model" to mean "data model". This is particularly true of people who do "data modeling" as part of their job. They may use a term like "building model" to refer to a __data model__ for creating digital models of buildings (rather than a specific digital model of a particular building). For this reason, it may be helpful to use a synonym like "schema" or "ontology", since "building schema" will be more-reliably interpreted as a "data model for structuring data that represents buildings" and never as a static digital model of a particular building.
+Communication can get tricky when folks use the unqualified term "model" to mean "data model". This is particularly true of people who do "data modeling" as part of their job. They may use a term like "building model" to refer to a __data model__ for creating digital models of buildings (rather than a specific digital model of a particular building). For this reason, it may be helpful to use a synonym like "schema", since "building schema" will be more-reliably interpreted as a "data model for structuring data that represents buildings" and never as a persistent model of a particular building.
 
 As an example, a digital model of a particular real-world building will consist of data that represents relevant aspects of that building for the desired use cases. The digital model will have a "buildings data model" that defines what aspects of the real-world buildings can be expressed in the data of the digital model, and how they are named, structured, and represented in the digital model's data.
 
@@ -118,7 +117,7 @@ The fact that some data models are called "ontologies" but are not the same thin
 
 Even more confusing, it is possible to translate a "philosophical ontology" into a data-modeling language like OWL, resulting in a data-modeling-ontology derived from a philosophical ontology.
 
-Discussion of data models (aka "ontologies" and "schemas") and philosophical ontologies commonly arises in the design and development of [digital models](#digital-model)) for [digital twin systems](#digital-twin-system).
+Discussion of data models (aka "ontologies" and "schemas") and philosophical ontologies commonly arises in the design and development of [digital models](#digital-model) for [digital twin systems](#digital-twin-system).
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -130,11 +129,11 @@ Discussion of data models (aka "ontologies" and "schemas") and philosophical ont
 
 Before computers, we only modeled physical things using clay, wood, or plastic models. Nowadays, we use digital models.
 
-By "digital model" we do **not** mean "data model", although most digital models will have a "data model" or "schema" that describes the structure and meaning of the "instance data" in the digital model.
+By "digital model" we do **not** mean "[data model](#data-model) although most digital models will have a "data model" or "schema" or "ontology" that describes the structure and meaning of the "instance data" in the digital model.
 
 ***Narrower terms***
 
-- We divide digital models into two broad categories: [static models](#static-model) and [(dynamic) simulation models](#simulation-model)
+- We divide digital models into two broad categories: [persistent models](#persistent-model) and [simulation models](#simulation-model).
 
 ***Related terms***
 
@@ -151,7 +150,7 @@ By "digital model" we do **not** mean "data model", although most digital models
 
 ***Alternate, non-preferred terms***
 
-- Every kind of digital model will have its own terminology to refer to its identifiable parts. Those terms are completely appropriate (and preferred) in the context of those specific kinds of digital models, but to the extent that we need discuss digital models in general, we need a single term for their parts. Common alternate terms include "record", "row", "object", "entity", "node", "triple", and even "digital twin" (defined somewhat differently than here.)
+- Every kind of [digital model](#digital) will have its own terminology to refer to its identifiable parts. Those terms are completely appropriate (and preferred) in the context of those specific kinds of digital models, but to the extent that we need discuss digital models in general, we need a single term for their parts. Common alternate terms include "record", "row", "object", "entity", "node", "triple", and even "digital twin" (defined somewhat differently than here.)
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -252,14 +251,6 @@ A digital twin use case typically defines requirements for [synchronization](#sy
 
 ---
 
-## Dynamic Model
-
-Use [simulation model](#simulation-model) instead. Though "dynamic" is accurate and offers a better symmetry with [static model](#static-model), dynamic models are more commonly known as "simulation" models. "Simulation" also conveys the intent of the model (to simulate processes in reality).
-
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
 ## Human Digital Twin
 
 > A human digital twin is a [digital twin](#digital-twin) that represents a human, its internal systems, and its interactions with its environment.
@@ -308,10 +299,7 @@ The __modeling perspective__ is the set simplifications made by the modeler. Eve
 
 When you see "____ model" sometimes the blank is filled with the subject matter (e.g. a "building model") and sometimes with a modeling media (e.g. a "clay model" or "digital model") and occasionally even with a modeling perspective (e.g. a "functional model", "physical model", or "financial model").
 
-We can sort models into two broad categories of modeling perspective:
-
-- [Static models](#static-model) that represent a given state or set of states of their subject matter.
-- [Dynamic models](#dynamic-model) that represent (or simulate) the dynamics of a process. In the context of digital twins, we refer to these as [simulation models](#simulation-model).
+Whether a digital model is a [persistent model](#persistent-model) or [simulation model](#simulation-model) can also be considered part of its modeling perspective.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -326,6 +314,22 @@ We can sort models into two broad categories of modeling perspective:
 ## Observational Frequency
 
 > An observational frequency is a [synchronization frequency](#synchronization-frequency) characterizing how often observations of reality are made and reflected in a [digital model](#digital-model).
+
+*Back to [Table of Contents](#table-of-contents).*
+
+---
+
+## Persistent Model
+
+> A persistent (digital) model is a [digital model](#digital-model) consisting of stored structured information, representing states of some subject matter.
+
+A persistent model can be queried, in contrast to a [simulation model](#simulation-model), which must be executed to produce output.
+
+Examples of persistent models include databases of all kinds including relational databases, graph databases and other NoSQL databases, specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, IoT "data historians", etc.
+
+***Related terms***
+
+- [Persistent models](#persistent-model) are distinguished from [simulation models](#simulation-model), that contain algorithms.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -374,41 +378,24 @@ In other words, it is the process of mirroring the real world in the virtual rep
 
 ## Simulation Model
 
-> A simulation model is an *executable* [digital model](#digital-model) consisting of data and computational algorithms representing some subject matter from a dynamic perspective.
+> A simulation model is an *executable* [digital model](#digital-model) consisting of computational algorithms and supporting data representing some subject matter from a dynamic perspective.
 
 The subject matter of simulation model is typically a process or a set of entities with properties that are changing over the time-frame of interest.
 
-When executed (aka “run”), they often take [static models](#static-model) as input and their computational algorithms produce [static models](#static-model) as output.
+When executed (aka “run”), simulation models often take [persistent models](#persistent-model) as input and their computational algorithms produce [persistent models](#persistent-model) as output.
 
-Simulation models may also use reference data, which is really just another example of a [static model](#static-model).
+Simulation models may also use reference data, which is really just another example of a [persistent model](#persistent-model).
 
 Examples of simulation models include Finite Element Analysis (FEA) models, Machine Learning models, and various other kinds of simulations based on mathematical equations, including those describing laws of physics and engineering.
 
 ***Related terms***
 
-[Simulation models](#simulation-model) are distinguished from [static models](#static-model), that do not contain algorithms.
+[Simulation models](#simulation-model) are distinguished from [persistent models](#persistent-model), that do not contain algorithms.
 
 ***Alternate terms***
 
-- [Dynamic model](#dynamic-model)
-- Computational model
+- [Computational model](#computational-model)
   
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
-## Static Model
-
-> A static digital model is a [digital model](#digital-model) consisting of structured information, representing states of some subject matter from a static perspective.
-
-The essence of a static digital model is that it only consists of information "at rest" that can be queried.
-
-Examples of static models include databases of all kinds including more specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, etc.
-
-***Related terms***
-
-- [Static models](#static-model) are distinguished from [simulation models](#simulation-model), that contain algorithms.
-
 *Back to [Table of Contents](#table-of-contents).*
 
 ---
