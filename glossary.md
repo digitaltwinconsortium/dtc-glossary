@@ -100,6 +100,9 @@ The __medium__ of a "data model" is a data modeling language, which could be gra
 
 The __modeling perspective__ of a "data model" encompasses its data-modeling paradigm, where it sits on the "implementation perspective", as well as the choices it makes to simplify the real-world subject matter into named/structured data that describes aspects of that subject matter.
 
+This figure shows how a [Data Model](#data-model) relates to a [Digital Model](#digital-model) and how both relate to the physical world.
+![Data Model](images/DataModel.png)
+
 Communication can get tricky when folks use the unqualified term "model" to mean "data model". This is particularly true of people who do "data modeling" as part of their job. They may use a term like "building model" to refer to a __data model__ for creating digital models of buildings (rather than a specific digital model of a particular building). For this reason, it may be helpful to use a synonym like "schema" or "ontology", since "building schema" will be more-reliably interpreted as a "data model for structuring data that represents buildings" and never as a static digital model of a particular building.
 
 As an example, a digital model of a particular real-world building will consist of data that represents relevant aspects of that building for the desired use cases. The digital model will have a "buildings data model" that defines what aspects of the real-world buildings can be expressed in the data of the digital model, and how they are named, structured, and represented in the digital model's data.
@@ -108,6 +111,14 @@ As an example, a digital model of a particular real-world building will consist 
 
 - "Ontology" is sometimes used as a synonym for "data model". [DTDL](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#digital-twins-definition-language) (using a property-graph data-modeling paradigm) and [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language) (using a triple-graph data modeling paradigm) are common examples of this usage. This is in contrast to a "philosophical ontology" that might be written in English or Greek, e.g. by [Aristotle](https://en.wikipedia.org/wiki/Ontology#Aristotle).
 - "Schema" is sometimes used as a synonym for "data model". DDL defines database schemas. [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) uses CSDL (Common Schema Definition Language). [RDFS](https://en.wikipedia.org/wiki/RDF_Schema) (Resource Description Framework Schema) is sometimes used in conjunction with OWL to define data models using the triple-graph data-modeling paradigm.
+
+The fact that some data models are called "ontologies" but are not the same thing as "philosophical ontologies" is a source of confusion.
+
+![Philosophical Ontology and Data Models](images/DataModel-Ontology.png)
+
+Even more confusing, it is possible to translate a "philosophical ontology" into a data-modeling language like OWL, resulting in a data-modeling-ontology derived from a philosophical ontology.
+
+Discussion of data models (aka "ontologies" and "schemas") and philosophical ontologies commonly arises in the design and development of [digital models](#digital-model)) for [digital twin systems](#digital-twin-system).
 
 *Back to [Table of Contents](#table-of-contents).*
 
