@@ -110,6 +110,7 @@ As an example, a digital model of a particular real-world building will consist 
 
 - "Ontology" is sometimes used as a synonym for "data model". [DTDL](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#digital-twins-definition-language) (using a property-graph data-modeling paradigm) and [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language) (using a triple-graph data modeling paradigm) are common examples of this usage. This is in contrast to a "philosophical ontology" that might be written in English or Greek, e.g. by [Aristotle](https://en.wikipedia.org/wiki/Ontology#Aristotle).
 - "Schema" is sometimes used as a synonym for "data model". DDL defines database schemas. [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) uses CSDL (Common Schema Definition Language). [RDFS](https://en.wikipedia.org/wiki/RDF_Schema) (Resource Description Framework Schema) is sometimes used in conjunction with OWL to define data models using the triple-graph data-modeling paradigm.
+- "Information Model" is sometimes used as a synonym for "data model", though some parties make subtle distinctions between "information model" and "data model", such as taking it to imply a data model that lies on the "conceptual" end of the implementation spectrum.
 
 The fact that some data models are called "ontologies" but are not the same thing as "philosophical ontologies" is a source of confusion.
 
