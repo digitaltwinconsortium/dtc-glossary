@@ -196,9 +196,9 @@ Digital twins are motivated by outcomes, tailored to use cases, powered by integ
 
 ***Related terms***
 
-- A digital twin is implemented in a [digital twin system](#digital-twin-system)
-- The [digital models](#digital-model) that constitute a digital twin are synchronized at a specified [frequency](#synchronization-frequency)
-- The [digital models](#digital-model) that constitute a digital twin are synchronized at a specified [fidelity](#synchronization-fidelity)
+- A digital twin is implemented in a [digital twin system](#digital-twin-system).
+- The [digital models](#digital-model) that constitute a digital twin are synchronized at a specified [frequency](#synchronization-frequency).
+- The [digital models](#digital-model) that constitute a digital twin are synchronized at a specified [fidelity](#synchronization-fidelity).
 - A digital twin has a corresponding [physical twin](#physical-twin).
 - A digital twin is part of a [cyber-physical system](#cyber-physical-system).
 
