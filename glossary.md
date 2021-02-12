@@ -136,6 +136,8 @@ By "digital model" we do **not** mean "[data model](#data-model) although most d
 
 - We divide digital models into two broad categories: [persistent models](#persistent-model) and [simulation models](#simulation-model).
 
+![Two categories of digital models](images/DigitalModels.png)
+
 ***Related terms***
 
 - In the context of our definition of [digital twin](#digital-twin), a digital model's subject matter may include many entities and processes.
@@ -177,13 +179,20 @@ Digital thread generally relies on stable, consistent real-world identifiers to 
 
 ## Digital Twin
 
-> A digital twin is a [virtual representation](#virtual-representation) of real-world entities and processes, synchronized at a specified [frequency](#synchronization-frequency) and [fidelity](#synchronization-fidelity).
+> A digital twin is a [virtual representation](#virtual-representation) of real-world entities and processes, [synchronized](#synchronization) at a specified [frequency](#synchronization-frequency) and [fidelity](#synchronization-fidelity).
 
-[Digital twin systems](#digital-twin-system) transform business by accelerating holistic understanding, optimal decision-making, and effective action.
+[Digital Twin Systems](#digital-twin-system) transform business by accelerating holistic understanding, optimal decision-making, and effective action.
 
 Digital Twins use real-time and historical data to represent the past and present and simulate predicted futures.
 
-Digital twins are motivated by outcomes, tailored to use cases, powered by integration, built on data, guided by domain knowledge, and implemented in IT/OT systems.
+Digital Twins are motivated by outcomes, tailored to use cases, powered by integration, built on data, guided by domain knowledge, and implemented in IT/OT systems.
+
+**The subject matter of a digital twin**
+In the definition, the "subject matter" of the Digital Twin is "real-world entities and processes," where:
+
+- "Entities" refers to things that __exist__ over a significant time-span. In the context of Digital Twins, these are mostly physical objects but also include immaterial things like organizations, supply-chains, and work-orders, etc.
+- "Processes" refers to events or activities that __occur__ in time. These might be transportation journeys or accidents, power outages, pharmaceutical production processes, weather events, heart attacks, or destructive processes such as corrosion.
+- "Systems" consist of entities interacting in processes for a given purpose. Though they are not explicitly mentioned in the definition, they are included in the "subject matter" of a Digital Twin.
 
 ***Alternate, non-preferred terms***
 
@@ -328,6 +337,8 @@ A persistent model can be queried, in contrast to a [simulation model](#simulati
 
 Examples of persistent models include databases of all kinds including relational databases, graph databases and other NoSQL databases, specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, IoT "data historians", etc.
 
+![Two categories of digital models](images/DigitalModels.png)
+
 ***Related terms***
 
 - [Persistent models](#persistent-model) are distinguished from [simulation models](#simulation-model), that contain algorithms.
@@ -388,6 +399,8 @@ When executed (aka “run”), simulation models often take [persistent models](
 Simulation models may also use reference data, which is really just another example of a [persistent model](#persistent-model).
 
 Examples of simulation models include Finite Element Analysis (FEA) models, Machine Learning models, and various other kinds of simulations based on mathematical equations, including those describing laws of physics and engineering.
+
+![Two categories of digital models](images/DigitalModels.png)
 
 ***Related terms***
 

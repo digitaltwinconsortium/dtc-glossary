@@ -1,12 +1,25 @@
 # dtc-glossary
 
-> A repository for collaboration on a glossary of digital twins and digital twin technology from the [Digital Twin Consortium](https://www.digitaltwinconsortium.org/).
+> A repository for collaboration on a [glossary of digital twins and digital twin technology](glossary.md) from the [Digital Twin Consortium](https://www.digitaltwinconsortium.org/).
 
-The [glossary](glossary.md) is not intended to cover industry-specific domains for which one might build a digital twin system.
+## Criteria for including terms
 
-Authors of new entries should create them in alphabetical order using the template below and update the [Table of Contents](glossary.md#table-of-contents). Only the formal definition following the template `> A {term} is a [{broader term}](#broader-term) that {differentiating clause}.` is required--other content is optional.
+Sometimes less is more. Some relevant questions to ask about a candidate term include:
+
+- Does the term *add value* in the form of clarification or context that is not available in a common dictionary?
+- Does the term *solve a terminology problem* for the author of a digital twin use case or some other product of the DTC?
+- Is the term *industry-specific*?
+  - The [glossary](glossary.md) is not intended to cover industry-specific domains for which one might build a digital twin system.
+  - For example “bridge abutment”, “rotator cuff”, “supply chain”, “financial asset”, etc. probably belong in a different glossary.
+- Is the term *implementation-specific*?
+  - This glossary is not the place to describe the terms of a particular implementation approach.
+  - We may have entries for types of technology relevant to digital twins, and those entries may list (and link to) specific examples.
+- Does the definition *apply across all industry domains*?
+- Is the term really *necessary*? What problems would be caused if it were omitted?
 
 ## Template for new entries
+
+Authors of new entries should create them in alphabetical order using the template below and update the [Table of Contents](glossary.md#table-of-contents). Only the formal definition following the template `> A {term} is a [{broader term}](#broader-term) that {differentiating clause}.` is required--other content is optional.
 
 ```markdown
 
@@ -75,6 +88,7 @@ These should be complete sentences that describe how the {term} relates to some 
 You may include entries for non-terms or synonyms simply as a place to link back to the primary entry.
 
 ```markdown
+
 ## {Non-Preferred Term}
 
 Use [{term}(#term)] instead.
