@@ -187,7 +187,6 @@ Digital Twins use real-time and historical data to represent the past and presen
 
 Digital Twins are motivated by outcomes, tailored to use cases, powered by integration, built on data, guided by domain knowledge, and implemented in IT/OT systems.
 
-**The subject matter of a digital twin**
 In the definition, the "subject matter" of the Digital Twin is "real-world entities and processes," where:
 
 - "Entities" refers to things that __exist__ over a significant time-span. In the context of Digital Twins, these are mostly physical objects but also include immaterial things like organizations, supply-chains, and work-orders, etc.
