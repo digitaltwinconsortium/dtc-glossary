@@ -189,9 +189,8 @@ Digital Twins are motivated by outcomes, tailored to use cases, powered by integ
 
 In the definition, the "subject matter" of the Digital Twin is "real-world entities and processes," where:
 
-- "Entities" refers to things that __exist__ over a significant time-span. In the context of Digital Twins, these are mostly physical objects but also include immaterial things like organizations, supply-chains, and work-orders, etc.
+- "Entities" refers to things that __exist__ over a significant time-span. In the context of Digital Twins, these are mostly physical objects and systems but also include immaterial things like organizations, supply-chains, and work-orders, etc.
 - "Processes" refers to events or activities that __occur__ in time. These might be transportation journeys or accidents, power outages, pharmaceutical production processes, weather events, heart attacks, or destructive processes such as corrosion.
-- "Systems" consist of entities interacting in processes for a given purpose. Though they are not explicitly mentioned in the definition, they are included in the "subject matter" of a Digital Twin.
 
 ***Alternate, non-preferred terms***
 
