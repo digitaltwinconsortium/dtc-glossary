@@ -40,6 +40,8 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Synchronization Fidelity](#synchronization-fidelity)
 - [Synchronization Frequency](#synchronization-frequency)
 - [Synchronization Mechanism](#synchronization-mechanism)
+- [System](#system)
+- [System](#system-1)
 - [Use Case](#use-case)
 - [Virtual](#virtual)
 - [Virtual Representation](#virtual-representation)
@@ -468,6 +470,24 @@ The frequency will not be uniform for a digital twin. It may vary per [digital m
 
 ---
 
+## System
+
+> A system is a connected collection of entities interacting for a specific purpose.
+
+Systems are defined by their structure and purpose, expressed through their function, and influenced by their environment.
+
+*Back to [Table of Contents](#table-of-contents).*---
+
+---
+## System
+
+> A system is an [entity](#entity) consisting of a connected collection of entities interacting for a specific purpose.
+
+Systems are defined by their structure and purpose, expressed through their function, and influenced by their environment.
+
+*Back to [Table of Contents](#table-of-contents).*
+
+---
 ## Use Case
 
 > A use case is a set of circumstances or a scenario for the use of something.
