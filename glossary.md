@@ -12,7 +12,6 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 <!-- omit in TOC -->
 ## Table of Contents
 
-- [Built Environment Digital Twin](#built-environment-digital-twin)
 - [Computational Model](#computational-model)
 - [Cyber-Physical System](#cyber-physical-system)
 - [Data Model](#data-model)
@@ -24,8 +23,6 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Digital Twin System](#digital-twin-system)
 - [Digital Twin System Feature](#digital-twin-system-feature)
 - [Digital Twin Use Case](#digital-twin-use-case)
-- [Human Digital Twin](#human-digital-twin)
-- [Infrastructure Digital Twin](#infrastructure-digital-twin)
 - [Interventional Frequency](#interventional-frequency)
 - [Model](#model)
 - [Modeling Fidelity](#modeling-fidelity)
@@ -45,14 +42,6 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Virtual Representation](#virtual-representation)
 - [Virtual-to-real synchronization](#virtual-to-real-synchronization)
 - [Virtual Twin](#virtual-twin)
-
----
-
-## Built Environment Digital Twin
-
-See [Infrastructure Digital Twin](#infrastructure-digital-twin).
-
-*Back to [Table of Contents](#table-of-contents).*
 
 ---
 
@@ -196,11 +185,6 @@ In the definition, the "subject matter" of the Digital Twin is "real-world entit
 
 - [Virtual Twin](#virtual-twin)
 
-***Narrower terms***
-
-- [Human Digital Twin](#human-digital-twin)
-- [Infrastructure Digital Twin](#infrastructure-digital-twin)
-
 ***Related terms***
 
 - A digital twin is implemented in a [digital twin system](#digital-twin-system).
@@ -254,34 +238,6 @@ Digital twin system features are generally implemented by [subsystems of the dig
 Digital Twin use cases are designed to improve outcomes, provide requirements for digital twin systems.
 
 A digital twin use case typically defines requirements for [synchronization](#synchronization) including [synchronization frequency](#synchronization-frequency), etc.
-
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
-## Human Digital Twin
-
-> A human digital twin is a [digital twin](#digital-twin) that represents a human, its internal systems, and its interactions with its environment.
-
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
-## Infrastructure Digital Twin
-
-> An infrastructure digital twin is a [digital twin](#digital-twin) that represents infrastructure assets and systems, their environment, and productive and non-productive processes relevant to their operation.
-
-Examples of assets include roads, rail, facilities, buildings, bridges, offshore platforms, etc.
-
-Examples of systems include transportation and utility networks, heating systems, etc.
-
-Examples of the environment include geographic features and portions of the built environment that are not modeled as assets.
-
-Examples of processes include the flows of traffic, resources, or people; weather, floods, fires, earthquakes, and other resilience-related events; corrosion and other forms of degradation; solar, wind, hydroelectric, or other sources of energy generation; etc.
-
-***Alternate terms***
-
-- [Built Environment Digital Twin](#built-environment-digital-twin) is a viable alternative term that is semantically more inclusive of "Buildings" which are sometimes considered to be distinct from "Infrastructure".
 
 *Back to [Table of Contents](#table-of-contents).*
 
