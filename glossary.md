@@ -27,6 +27,8 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Model](#model)
 - [Modeling Fidelity](#modeling-fidelity)
 - [Observational Frequency](#observational-frequency)
+- [Ontology](#ontology)
+- [Ontology (data modeling)](#ontology-data-modeling)
 - [Persistent Model](#persistent-model)
 - [Physical Twin](#physical-twin)
 - [Real-to-virtual synchronization](#real-to-virtual-synchronization)
@@ -97,17 +99,13 @@ As an example, a digital model of a particular real-world building will consist 
 
 ***Alternate terms***
 
-- "Ontology" is sometimes used as a synonym for "data model". [DTDL](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#digital-twins-definition-language) (using a property-graph data-modeling paradigm) and [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language) (using a triple-graph data modeling paradigm) are common examples of this usage. This is in contrast to a "philosophical ontology" that might be written in English or Greek, e.g. by [Aristotle](https://en.wikipedia.org/wiki/Ontology#Aristotle).
-- "Schema" is sometimes used as a synonym for "data model". DDL defines database schemas. [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) uses CSDL (Common Schema Definition Language). [RDFS](https://en.wikipedia.org/wiki/RDF_Schema) (Resource Description Framework Schema) is sometimes used in conjunction with OWL to define data models using the triple-graph data-modeling paradigm.
+- "Ontology" is sometimes used as a synonym for "data model", particularly for [data-modeling ontologies](#ontology-data-modeling)
+- "Schema" is sometimes used as a synonym for "data model". DDL defines database schemas. [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) uses CSDL (Common Schema Definition Language). [RDFS](https://en.wikipedia.org/wiki/RDF_Schema) (Resource Description Framework Schema) is sometimes used in conjunction with [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language) to define data models using the triple-graph data-modeling paradigm.
 - "Information Model" is sometimes used as a synonym for "data model", though some parties make subtle distinctions between "information model" and "data model", such as taking it to imply a data model that lies on the "conceptual" end of the implementation spectrum.
 
-The fact that some data models are called "ontologies" but are not the same thing as "philosophical ontologies" is a source of confusion.
+The various synonyms of "data model" and the fact that some ontologies can be used as data models can be a significant source of confusion in the design and development of [digital models](#digital-model) for [digital twin systems](#digital-twin-system).
 
-![Philosophical Ontology and Data Models](images/DataModel-Ontology.png)
-
-Even more confusing, it is possible to translate a "philosophical ontology" into a data-modeling language like OWL, resulting in a data-modeling-ontology derived from a philosophical ontology.
-
-Discussion of data models (aka "ontologies" and "schemas") and philosophical ontologies commonly arises in the design and development of [digital models](#digital-model) for [digital twin systems](#digital-twin-system).
+![Data Models and Ontologies](images/DataModel-Ontology.png)
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -283,6 +281,51 @@ Whether a digital model is a [persistent model](#persistent-model) or [simulatio
 
 ---
 
+## Ontology
+
+> An ontology is a representational artefact that describes universals and certain relations among them in a domain of interest.
+
+"Universals" are types or classes of entities, in contrast to "particulars" which are instances of entities.
+
+An ontology can be written in any number of natural or formal languages and a given ontological understanding can be represented in more than one language.
+
+A human-readable ontology is used to assist peoples understanding of and communication regarding the ontology's domain.
+
+A machine-readable ontology can be read by software to associate the semantics defined in the ontology with data. This may make the data more meaningful to humans. It may also facilitate data interoperability if data structures from different systems are mapped to terms from a common ontology.
+
+Machine-readable ontologies should also include detailed human-readable definitions of their terms in order to be used effectively for meaningful semantic mapping.
+
+Ontologies generally do not specify data structures or data types used to represent particular entities, but [data-modeling ontologies](#ontology-data-modeling) do.
+
+An ontology can be used in a [digital twin system](#digital-twin-system) to provide consistent semantics and support data integration among different [persistent models].
+
+![Data Models and Ontologies](images/DataModel-Ontology.png)
+
+Also see wikipedia's entry for [ontology (information science)](https://en.wikipedia.org/wiki/Ontology_(information_science)) and [ontology (philosophical)](https://en.wikipedia.org/wiki/Ontology).
+
+*The given definition is a simplified version of the definition from "Building Ontologies with Basic Formal Ontology" by Barry Smith.*
+
+*Back to [Table of Contents](#table-of-contents).*
+
+---
+
+## Ontology (data modeling)
+
+> A data-modeling ontology is an [ontology](#ontology) that is also a conceptual [data model](#data-model).
+
+Data-modeling ontologies describe real-world [universals](https://en.wikipedia.org/wiki/Universal_(metaphysics)) using data structures and datatypes in a particular data-modeling paradigm. Ideally, they also include precise human-readable definitions of the universals that they are describing and place.
+
+Examples of this usage of "ontology" relevant to digital twins include:
+
+- [DTDL](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#digital-twins-definition-language)-based ontologies. DTDL is a data-modeling language using a property-graph data-modeling paradigm with support for integration with IoT via "telemetry" properties. DTDL was created by Microsoft and open-sourced.
+- [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language)-based ontologies. OWL is a data-modeling language using a triple-graph data modeling paradigm. It is part of the [Semantic Web Stack](https://en.wikipedia.org/wiki/Semantic_Web_Stack).
+
+Though data-modeling ontologies define data structures and datatypes that *can* be used to represent instances of the ontologically-defined entities, those data structures and types don't have to be used to store or transmit the data. Data stored in different data structures can refer to the terms defined by the ontology to clarify the semantics of the data. Data-modeling ontologies may prioritize unambiguous description of universals over optimization of data persistence.
+
+*Back to [Table of Contents](#table-of-contents).*
+
+---
+
 ## Persistent Model
 
 > A persistent (digital) model is a [digital model](#digital-model) consisting of stored structured information, representing states of some subject matter.
@@ -313,8 +356,6 @@ The physical twin may constitute physical systems of interest and their environm
 
 - Physical asset - May be used in specific domains (such as infrastructure), but is not broad enough for general purposes.
 
-[//]: # (Written by Casey Mullen)
-[//]: # (See )
 
 *Back to [Table of Contents](#table-of-contents).*
 
