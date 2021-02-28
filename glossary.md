@@ -354,6 +354,7 @@ Examples of subsystems of digital twin systems include the virtual representatio
 
 - A digital twin system implements a [digital twin](#digital-twin).
 - A digital twin system comprises [functional subsystems](#subsystems-of-a-digital-twin-system) that implement [digital twin system features](#digital-twin-system-feature).
+- [Digital twin platforms](#digital-twin-platform) provide a purpose-specific foundation for a digital twin system.
 - [Digital twin applications](#digital-twin-applications).
 - [Digital twin services](#digital-twin-services).
 - [Integration service interface](#integration-service-interface).
