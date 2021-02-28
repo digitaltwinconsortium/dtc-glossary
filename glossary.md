@@ -346,8 +346,6 @@ Most digital twin services provide a [service interface](#service-interface) for
 
 > A digital twin system is a [system-of-systems](#digital-system-of-systems) that implements a [digital twin](#digital-twin).
 
-Examples of subsystems of digital twin systems include the virtual representation, synchronization (observation and intervention) mechanism(s), data integration, analysis, visualization, user interfaces, security, etc.
-
 ![Digital Twin System](images/DigitalTwinSystems.png)
 
 ***Related terms***
