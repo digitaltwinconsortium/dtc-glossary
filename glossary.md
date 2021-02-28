@@ -84,7 +84,7 @@ Use [simulation model](#simulation-model) instead. Though simulation models are 
 
 ## Cyber-Physical System
 
-> A system consisting of an integration of physical and digital systems via networking.
+> A system consisting of physical and digital systems integrated via networking.
 
 A [digital twin](#digital-twin) considered together with its [physical twin](#physical-twin) is an example of a cyber-physical system.
 
