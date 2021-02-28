@@ -317,6 +317,11 @@ Digital twin applications are driven by use-cases.
 
 > A digital twin platform is a set of integrated [services](#digital-twin-services), [applications](#digital-twin-applications), and other [digital twin subsystems](#subsystems-of-a-digital-twin-system) that are designed to be used to implement [digital twin systems].
 
+Examples include:
+
+- [Azure Digital Twins](https://azure.microsoft.com/en-us/services/digital-twins/).
+- [iTwin Platform](https://developer.bentley.com/)
+
 *Back to [Table of Contents](#table-of-contents).*
 
 ---
