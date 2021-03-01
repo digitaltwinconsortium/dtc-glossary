@@ -534,9 +534,9 @@ Also see wikipedia's entry for [ontology (information science)](https://en.wikip
 
 > A data-modeling ontology is an [ontology](#ontology) that is also a conceptual [data model](#data-model).
 
-Data-modeling ontologies describe real-world [universals](https://en.wikipedia.org/wiki/Universal_(metaphysics)) using data structures and datatypes in a particular [data-modeling paradigm](#data-modeling-paradigm). Ideally, they also include precise human-readable definitions of the universals that they are describing and place.
+Data-modeling ontologies describe real-world [universals](https://en.wikipedia.org/wiki/Universal_(metaphysics)) using data structures and datatypes in a particular [data-modeling paradigm](#data-modeling-paradigm). Ideally, they also include precise human-readable definitions of the universals that they are describing.
 
-Examples of this usage of "ontology" relevant to digital twins include:
+An incomplete list of examples of data-modeling ontologies relevant to digital twins includes:
 
 - [DTDL](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#digital-twins-definition-language)
 - [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language)
