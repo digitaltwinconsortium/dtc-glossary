@@ -221,7 +221,7 @@ See [data modeling in digital twin systems](#data-modeling-in-digital-twin-syste
 
 ## Digital Model
 
-> A representation (of some subject matter) consisting of structured digital information and/or computational algorithms.
+> A [model](#model) consisting of structured digital information and/or computational algorithms.
 
 Before computers, we only modeled physical things using clay, wood, or plastic models. Nowadays, we use digital models.
 
