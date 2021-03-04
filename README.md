@@ -60,7 +60,15 @@ Authors of new entries should create them in alphabetical order using the templa
 
 ### Formal Definition
 
-The formal definition should be a complete sentence following the template `> A {term} is a [{broader term}](#broader-term) that {differentiating clause}.` For example `> A kangaroo is a marsupial that lives in Australia, hops, and is a good boxer.` (but create a hyperlink to "marsupial" if it is defined elsewhere in the glossary.)
+The formal definition should be a complete sentence following the template
+
+`> A {term} is a [{broader term}](#broader-term) that {differentiating clause}.`
+
+For example
+
+`> A kangaroo is a marsupial that lives in Australia, hops, and is a good boxer.` 
+
+(but create a hyperlink to "marsupial" if it is defined elsewhere in the glossary.)
 
 ### Context
 
