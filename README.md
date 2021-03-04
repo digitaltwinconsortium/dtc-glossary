@@ -7,6 +7,7 @@
 Sometimes less is more. Some relevant questions to ask about a candidate term include:
 
 - Does the term *add value* in the form of clarification or context that is not available in a common dictionary?
+- Does the term provide a place to reference other DTC-defined content?
 - Does the term *solve a terminology problem* for the author of a digital twin use case or some other product of the DTC?
 - Is the term *industry-specific*?
   - The [glossary](glossary.md) is not intended to cover industry-specific domains for which one might build a digital twin system.
