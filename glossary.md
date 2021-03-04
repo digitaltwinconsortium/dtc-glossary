@@ -43,7 +43,7 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Observational Frequency](#observational-frequency)
 - [Ontology](#ontology)
 - [Ontology (data modeling)](#ontology-data-modeling)
-- [Persistent Model](#persistent-model)
+- [Stored Representation](#stored-representation)
 - [Physical Twin](#physical-twin)
 - [Real-to-virtual synchronization](#real-to-virtual-synchronization)
 - [Real-World](#real-world)
@@ -104,7 +104,7 @@ See [Wikipedia's definition of cyber-physical system](https://en.wikipedia.org/w
 
 ## Data Model
 
-> A data model is a [persistent model](#persistent-model) of data that describes its structure, datatypes, and meaning.
+> A data model is a [stored representation](#stored-representation) of data that describes its structure, datatypes, and meaning.
 
 A data model will use some __data modeling paradigm__ that defines its approach to __structuring data__. Some examples include:
 
@@ -119,7 +119,7 @@ The __meaning__ of particular data structured according to the data model may be
 
 A given data model may lie somewhere along an __implementation spectrum__. It may be an implementation-neutral "logical" or "conceptual" data model or a persistence-specific data model like a SQL database schema. Often, a high-level conceptual data model is exposed through an API, but is mapped to a low-level implementation-specific data model by the software that implements the API.
 
-The __subject matter__ of a data model is a [persistent model](#persistent-model). In other words, every [persistent model](#persistent-model) (which consists of particular data) will have a __data model__ that describes the structure and meaning of its digital data.
+The __subject matter__ of a data model is a [stored representation](#stored-representation). In other words, every [stored representation](#stored-representation) (which consists of particular data) will have a __data model__ that describes the structure and meaning of its digital data.
 
 The __medium__ of a "data model" is a [data modeling language](#data-modeling-language).
 
@@ -128,7 +128,7 @@ The __modeling perspective__ of a "data model" encompasses its data-modeling par
 The following figure shows how a [Data Model](#data-model) relates to a [Digital Model](#digital-model) and how both relate to the physical world.
 ![Data Model](images/DataModel.png)
 
-Communication can get tricky when folks use the unqualified term "model" to mean "data model". This is particularly true of people who do "data modeling" as part of their job. They may use a term like "building model" to refer to a __data model__ for creating digital models of buildings (rather than a specific digital model of a particular building). For this reason, it may be helpful to use a synonym like "schema", since "building schema" will be more-reliably interpreted as a "data model for structuring data that represents buildings" and never as a persistent model of a particular building.
+Communication can get tricky when folks use the unqualified term "model" to mean "data model". This is particularly true of people who do "data modeling" as part of their job. They may use a term like "building model" to refer to a __data model__ for creating digital models of buildings (rather than a specific digital model of a particular building). For this reason, it may be helpful to use a synonym like "schema", since "building schema" will be more-reliably interpreted as a "data model for structuring data that represents buildings" and never as a stored representation of a particular building.
 
 As an example, a digital model of a particular real-world building will consist of data that represents relevant aspects of that building for the desired use cases. The digital model will have a "buildings data model" that defines the concepts of real-world buildings that can be expressed in the data of the digital model, and how they are named, structured, and represented in the digital model's data.
 
@@ -160,11 +160,11 @@ A __persistence__ [data model](#digital-model) uses a [data modeling language](#
 
 [Service interfaces](#service-interface) embody a __logical__ [data model](#digital-model) that describes the data structures and types used by an API or protocol. This data model may differ from the lower-level persistence-specific data model, with the API implementation handling the mapping between the two. Examples include OData's CSDL (for entity-relationship style REST APIs) and GraphQL Schema (for property-graph style APIs). Other common ways of defining the "logical" data model of an API or protocol include JSON Schema and XML schema. Non-web-based APIs model data in programming-language-specific ways.
 
-__Conceptual__ [data models](#digital-model) are intended to be relatively free of the implementation-specific functional, performance, and scalability concerns of [service interfaces](#service-interface) and [persistent models](#persistent-model) so that they can focus on describing the real-world concepts in the domain of the [digital twin](#digital-twin). These data models may or may not be machine-readable, as they may only be used to guide the development of the GUI and lower-level data models.
+__Conceptual__ [data models](#digital-model) are intended to be relatively free of the implementation-specific functional, performance, and scalability concerns of [service interfaces](#service-interface) and [stored representations](#stored-representation) so that they can focus on describing the real-world concepts in the domain of the [digital twin](#digital-twin). These data models may or may not be machine-readable, as they may only be used to guide the development of the GUI and lower-level data models.
 
-Conceptual data models may be used in a [digital twin system](#digital-twin-system) that is integrating information from multiple [persistent models](#persistent-model), each with its own persistence and logical data models. The digital twin system may have an [integration model/function](#integration-modelfunction) that provides access to data using a conceptual data model that is compatible with the overall [ontology](#ontology) of the digital twin system. . A variety of data modeling languages can be used for this function, including those for [data-modeling ontologies](#ontology-data-modeling).
+Conceptual data models may be used in a [digital twin system](#digital-twin-system) that is integrating information from multiple [stored representations](#stored-representation), each with its own persistence and logical data models. The digital twin system may have an [integration model/function](#integration-modelfunction) that provides access to data using a conceptual data model that is compatible with the overall [ontology](#ontology) of the digital twin system. . A variety of data modeling languages can be used for this function, including those for [data-modeling ontologies](#ontology-data-modeling).
 
-Because the [integration model/function](#integration-modelfunction) may employ both [aggregation](#aggregation) and [federation](#federation) [integration strategies](#integration-strategy), data modeling languages compatible with integration-friendly service interfaces like [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol), [SPARQL](https://www.w3.org/TR/rdf-sparql-query/), and [GraphQL](https://graphql.org/) may be useful. These support both access to aggregated [integration models](#integration-modelfunction) and mapping to physical-separate federated [persistent models](#persistent-model).
+Because the [integration model/function](#integration-modelfunction) may employ both [aggregation](#aggregation) and [federation](#federation) [integration strategies](#integration-strategy), data modeling languages compatible with integration-friendly service interfaces like [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol), [SPARQL](https://www.w3.org/TR/rdf-sparql-query/), and [GraphQL](https://graphql.org/) may be useful. These support both access to aggregated [integration models](#integration-modelfunction) and mapping to physical-separate federated [stored representations](#stored-representation).
 
 Most [data modeling languages](#data-modeling-language) can be used in many of these functional roles, and roles can be combined. A single data model could be used at the conceptual, service interface, and persistence levels if system requirements can be met. The [data-modeling ontology](#ontology-data-modeling) of the [integration service interface](#integration-service-interface) may be used as the overall [ontology](#ontology) of the digital twin system and the data model of the [integration model/function](#integration-modelfunction).
 
@@ -211,7 +211,7 @@ Some common examples include:
 - JSON uses an __object-oriented__ data-modeling paradigm defined by [ECMA-404](#https://www.ecma-international.org/publications-and-standards/standards/ecma-404/).
 - XML uses a __hierarchical__ data-modeling paradigm defined by the [W3C XML Information Set](https://www.w3.org/TR/xml-infoset/).
 
-Specialized [persistent models](#persistent-model) may use idiosyncratic data modeling paradigms.
+Specialized [stored representations](#stored-representation) may use idiosyncratic data modeling paradigms.
 
 See [data modeling in digital twin systems](#data-modeling-in-digital-twin-systems).
 
@@ -229,7 +229,7 @@ By "digital model" we do **not** mean "[data model](#data-model) although most d
 
 ***Narrower terms***
 
-- We divide digital models into two broad categories: [persistent models](#persistent-model) and [simulation models](#simulation-model).
+- We divide digital models into two broad categories: [stored representations](#stored-representation) and [simulation models](#simulation-model).
 
 ![Two categories of digital models](images/DigitalModels.png)
 
@@ -356,7 +356,7 @@ Most digital twin services provide a [service interface](#service-interface) for
 - [Service interface](#service-interface).
 - [Simulation model](#simulation-model).
 - [Simulation modeling language](#simulation-modeling-language).
-- [Persistent model](#persistent-model).
+- [Persistent model](#stored-representation).
 - [Data modeling language](#data-modeling-language).
 - [Synchronization mechanisms](#synchronization-mechanism).
 - [Data Interoperability](#data-interoperability).
@@ -405,7 +405,7 @@ Federation only implies gathering enough centralized "index" information to use 
 
 > The integration model/function is a subsystem of a [digital twin system](#digital-twin-system) that provides integrated and semantically-aligned access to the [digital models](#digital-model) of the digital twin system.
 
-The integration model/function may comprise a [persistent model](#persistent-model) for data [aggregation](#aggregation) and functions for data [federation](#federation).
+The integration model/function may comprise a [stored representation](#stored-representation) for data [aggregation](#aggregation) and functions for data [federation](#federation).
 
 The integration model/function is closely associated with [digital thread](#digital-thread).
 
@@ -429,9 +429,9 @@ See [data modeling in digital twin systems](#data-modeling-in-digital-twin-syste
 
 In software architecture, there are two main patterns for data integration: [aggregation](#aggregation) and [federation](#federation).
 
-Individual [persistent models](#persistent-model) (include the inputs and outputs of [simulation models](#simulation-model)) can be integrated by the [integration model/function] of a [digital twin system](#digital-twin-system).
+Individual [stored representations](#stored-representation) (include the inputs and outputs of [simulation models](#simulation-model)) can be integrated by the [integration model/function] of a [digital twin system](#digital-twin-system).
 
-The [integration service interface](#integration-service-interface) of a [digital twin system](#digital-twin-system) can function as the [service interface](#service-interface) that exposes the overall digital twin system as a [persistent model](#persistent-model) which can in turn be aggregated by a "larger" digital twin system--a federation of digital twin systems.
+The [integration service interface](#integration-service-interface) of a [digital twin system](#digital-twin-system) can function as the [service interface](#service-interface) that exposes the overall digital twin system as a [stored representation](#stored-representation) which can in turn be aggregated by a "larger" digital twin system--a federation of digital twin systems.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -482,7 +482,7 @@ The __modeling perspective__ is the set simplifications made by the modeler. Eve
 
 When you see "____ model" sometimes the blank is filled with the subject matter (e.g. a "building model") and sometimes with a modeling media (e.g. a "clay model" or "digital model") and occasionally even with a modeling perspective (e.g. a "functional model", "physical model", or "financial model").
 
-Whether a digital model is a [persistent model](#persistent-model) or [simulation model](#simulation-model) can also be considered part of its modeling perspective.
+Whether a digital model is a [stored representation](#stored-representation) or [simulation model](#simulation-model) can also be considered part of its modeling perspective.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -518,7 +518,7 @@ Machine-readable ontologies should also include detailed human-readable definiti
 
 Ontologies generally do not specify data structures or data types used to represent particular entities, but [data-modeling ontologies](#ontology-data-modeling) do.
 
-An ontology can be used in a [digital twin system](#digital-twin-system) to provide consistent semantics and support data integration among different [persistent models].
+An ontology can be used in a [digital twin system](#digital-twin-system) to provide consistent semantics and support data integration among different [stored representations].
 
 ![Data Models and Ontologies](images/DataModel-Ontology.png)
 
@@ -547,19 +547,19 @@ Though data-modeling ontologies define data structures and datatypes that *can* 
 
 ---
 
-## Persistent Model
+## Stored Representation
 
 > A persistent (digital) model is a [digital model](#digital-model) consisting of stored structured information, representing states of some subject matter.
 
-A persistent model can be queried, in contrast to a [simulation model](#simulation-model), which must be executed to produce output.
+A stored representation can be queried, in contrast to a [simulation model](#simulation-model), which must be executed to produce output.
 
-Examples of persistent models include databases of all kinds including relational databases, graph databases and other NoSQL databases, specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, IoT "data historians", etc.
+Examples of stored representations include databases of all kinds including relational databases, graph databases and other NoSQL databases, specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, IoT "data historians", etc.
 
 ![Two categories of digital models](images/DigitalModels.png)
 
 ***Related terms***
 
-- [Persistent models](#persistent-model) are distinguished from [simulation models](#simulation-model), that contain algorithms.
+- [Persistent models](#stored-representation) are distinguished from [simulation models](#simulation-model), that contain algorithms.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -636,9 +636,9 @@ The concerns include privacy, security, safety, resilience, and reliability.
 
 The subject matter of simulation model is typically a process or a set of entities with properties that are changing over the time-frame of interest.
 
-When executed (aka “run”), simulation models often take [persistent models](#persistent-model) as input and their computational algorithms produce [persistent models](#persistent-model) as output.
+When executed (aka “run”), simulation models often take [stored representations](#stored-representation) as input and their computational algorithms produce [stored representations](#stored-representation) as output.
 
-Simulation models may also use reference data, which is really just another example of a [persistent model](#persistent-model).
+Simulation models may also use reference data, which is really just another example of a [stored representation](#stored-representation).
 
 Examples of simulation models include Finite Element Analysis (FEA) models, Machine Learning models, and various other kinds of simulations based on mathematical equations, including those describing laws of physics and engineering.
 
@@ -646,7 +646,7 @@ Examples of simulation models include Finite Element Analysis (FEA) models, Mach
 
 ***Related terms***
 
-[Simulation models](#simulation-model) are distinguished from [persistent models](#persistent-model), that do not contain algorithms.
+[Simulation models](#simulation-model) are distinguished from [stored representations](#stored-representation), that do not contain algorithms.
 
 ***Alternate terms***
 
@@ -750,9 +750,9 @@ Thus the intent of the term "[virtual representation](#virtual-representation)" 
 
 ## Virtual Representation
 
-> A virtual representation is a complex digital model comprised of a set of correlated [digital models](#digital-model) and supporting data which provide cohesive information about their subject matter.
+> A virtual representation is a complex, cohesive digital representation comprised of [stored representations](#stored-representation), [computations/simulations](#simulation-model), unstructured data, and supporting data which collectively provide an information-rich "virtual" experience of their their subject matter.
 
-The [integration model/function](#integration-modelfunction) of a [digital twin system](#digital-twin-system) "[virtually](#virtual)" joins different digital models together into a cohesive, multi-faceted, complex [model](#model) of reality that we call a "virtual representation".
+The [integration model/function](#integration-modelfunction) of a [digital twin system](#digital-twin-system) "[virtually](#virtual)" joins information of various kinds together into the cohesive, multi-faceted, representation of reality that we call a "virtual representation".
 
 In "virtual representation", the adjective "virtual" is not modifying "representation". The "representation" is an __actual__ representation that provides a virtual experience of the subject matter represented by the representation.
 
