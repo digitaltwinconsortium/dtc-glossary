@@ -13,15 +13,14 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 ## Table of Contents
 
 - [Aggregation](#aggregation)
-- [Computational Model](#computational-model)
 - [Cyber-Physical System](#cyber-physical-system)
 - [Data Interoperability](#data-interoperability)
 - [Data Model](#data-model)
 - [Data Modeling in Digital Twin Systems](#data-modeling-in-digital-twin-systems)
 - [Data Modeling Language](#data-modeling-language)
+- [Data-modeling Ontology](#data-modeling-ontology)
 - [Data Modeling Paradigm](#data-modeling-paradigm)
-- [Digital Model](#digital-model)
-- [Digital Model Element](#digital-model-element)
+- [Digital Representation](#digital-representation)
 - [Digital System-of-Systems](#digital-system-of-systems)
 - [Digital Thread](#digital-thread)
 - [Digital Twin](#digital-twin)
@@ -32,7 +31,7 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Digital Twin System Feature](#digital-twin-system-feature)
 - [Digital Twin Use Case](#digital-twin-use-case)
 - [Federation](#federation)
-- [Integration Model/Function](#integration-modelfunction)
+- [Integration Representation/Function](#integration-representationfunction)
 - [Integration Service Interface](#integration-service-interface)
 - [Integration Strategies](#integration-strategies)
 - [Interventional Frequency](#interventional-frequency)
@@ -42,14 +41,13 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Modeling Fidelity](#modeling-fidelity)
 - [Observational Frequency](#observational-frequency)
 - [Ontology](#ontology)
-- [Ontology (data modeling)](#ontology-data-modeling)
 - [Stored Representation](#stored-representation)
 - [Physical Twin](#physical-twin)
 - [Real-to-virtual synchronization](#real-to-virtual-synchronization)
 - [Real-World](#real-world)
 - [Security, Trust, and Governance](#security-trust-and-governance)
 - [Service Interface](#service-interface)
-- [Simulation Model](#simulation-model)
+- [Computational Representation](#computational-representation)
 - [Simulation Modeling Language](#simulation-modeling-language)
 - [Subsystems of a Digital Twin System](#subsystems-of-a-digital-twin-system)
 - [Synchronization](#synchronization)
@@ -74,19 +72,13 @@ Miriam Webster defines the verb “aggregate” as “to collect or gather into 
 
 ---
 
-## Computational Model
-
-Use [simulation model](#simulation-model) instead. Though simulation models are indeed computational in nature, we prefer the term that focuses on the intent of the model (to simulate processes in reality) rather than its implementation mechanism.
-
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
 ## Cyber-Physical System
 
 > A system consisting of physical and digital systems integrated via networking.
 
 A [digital twin](#digital-twin) considered together with its [physical twin](#physical-twin) is an example of a cyber-physical system.
+
+A physical device with a closely integrated digital control system is another example of a cyber-physical system. Such a cyber-physical system may be considered a [real-world entity](#real-world) represented by a [digital twin](#digital-twin).
 
 See [Wikipedia's definition of cyber-physical system](https://en.wikipedia.org/wiki/Cyber-physical_system).
 
@@ -96,7 +88,7 @@ See [Wikipedia's definition of cyber-physical system](https://en.wikipedia.org/w
 
 ## Data Interoperability
 
-> Data Interoperability is a functional [digital twin subsystem](#subsystems-of-a-digital-twin-system) that supports its [integration model/function](#integration-modelfunction) by [aggregating](#aggregation) or [federating](#federation) data from digital systems that may be considered "inside" or "external to" the [digital twin system](#digital-twin-system).
+> Data Interoperability is a functional [digital twin subsystem](#subsystems-of-a-digital-twin-system) that supports its [integration representation/function](#integration-representationfunction) by [aggregating](#aggregation) or [federating](#federation) data from digital systems that may be considered "inside" or "external to" the [digital twin system](#digital-twin-system).
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -104,7 +96,7 @@ See [Wikipedia's definition of cyber-physical system](https://en.wikipedia.org/w
 
 ## Data Model
 
-> A data model is a [stored representation](#stored-representation) of data that describes its structure, datatypes, and meaning.
+> A data model is a [model](#model) of data that describes its structure, datatypes, and meaning.
 
 A data model will use some __data modeling paradigm__ that defines its approach to __structuring data__. Some examples include:
 
@@ -115,32 +107,32 @@ A data model will use some __data modeling paradigm__ that defines its approach 
 
 The __datatypes__ associated with columns/properties/attributes may be "text" or "date" or "number" or more specialized datatypes such as "integer number" or "floating-point number". The specific datatypes available will vary per data-modeling language.
 
-The __meaning__ of particular data structured according to the data model may be encoded by giving data modeling elements (tables/columns/classes/properties) the names of real-world concepts. For example, particular data that lies in the part of the structure named "equipment.weight" with datatype "number" can be understood to represent the weight of a piece of physical equipment, expressed numerically. Those names may be cross-referenced with natural-language documentation providing a more-detailed description of the meaning of the modeled data. Some data-modeling languages allow additional metadata to be associated to elements, e.g. the units-of-measure for "equipment.weight".
+The __meaning__ of particular data structured according to the data model may be encoded by naming data modeling elements (tables/columns/classes/properties) using the names of real-world concepts. For example, particular data that lies in the part of the structure named "equipment.weight" with datatype "number" can be understood to represent the weight of a piece of physical equipment, expressed numerically. Those names may be cross-referenced with natural-language documentation providing a more-detailed description of the meaning of the modeled data. Some data-modeling languages allow additional metadata to be associated to elements, e.g. the units-of-measure for "equipment.weight".
 
 A given data model may lie somewhere along an __implementation spectrum__. It may be an implementation-neutral "logical" or "conceptual" data model or a persistence-specific data model like a SQL database schema. Often, a high-level conceptual data model is exposed through an API, but is mapped to a low-level implementation-specific data model by the software that implements the API.
 
-The __subject matter__ of a data model is a [stored representation](#stored-representation). In other words, every [stored representation](#stored-representation) (which consists of particular data) will have a __data model__ that describes the structure and meaning of its digital data.
+The __subject matter__ of a data model may be the data of a [stored representation](#stored-representation). Conversely, many [stored representations](#stored-representation) have a __data model__ that describes their structure and meaning.
 
 The __medium__ of a "data model" is a [data modeling language](#data-modeling-language).
 
 The __modeling perspective__ of a "data model" encompasses its data-modeling paradigm, where it sits on the "implementation perspective", as well as the choices it makes to simplify the real-world subject matter into named/structured data that describes aspects of that subject matter.
 
-The following figure shows how a [Data Model](#data-model) relates to a [Digital Model](#digital-model) and how both relate to the physical world.
+The following figure shows how a [Data Model](#data-model) relates to a [Stored Representation](#stored-representation) and how both relate to the physical world.
 ![Data Model](images/DataModel.png)
 
-Communication can get tricky when folks use the unqualified term "model" to mean "data model". This is particularly true of people who do "data modeling" as part of their job. They may use a term like "building model" to refer to a __data model__ for creating digital models of buildings (rather than a specific digital model of a particular building). For this reason, it may be helpful to use a synonym like "schema", since "building schema" will be more-reliably interpreted as a "data model for structuring data that represents buildings" and never as a stored representation of a particular building.
+Sometimes people use the unqualified term "model" to mean "data model", especially when they do "data modeling" as part of their job. They may use a term like "building model" to refer to a __data model__ for creating stored representations of buildings (rather than a specific digital representation of a particular building). For this reason, it may be helpful to use a synonym like "schema", since "building schema" will be more-reliably interpreted as a "data model for structuring data that represents buildings" and never as a stored representation (aka "model") of a particular building.
 
-As an example, a digital model of a particular real-world building will consist of data that represents relevant aspects of that building for the desired use cases. The digital model will have a "buildings data model" that defines the concepts of real-world buildings that can be expressed in the data of the digital model, and how they are named, structured, and represented in the digital model's data.
+As an example, a stored representation of a particular real-world building will consist of data that represents relevant aspects of that building for the desired use cases. The stored representation will have a "buildings data model" that defines the concepts of real-world buildings that can be expressed in the data of the stored representation, and how they are named, structured, and represented in the stored representation's data.
 
 See [data modeling in digital twin systems](#data-modeling-in-digital-twin-systems).
 
 ***Alternate terms***
 
-- "Ontology" is sometimes used as a synonym for "data model", particularly for [data-modeling ontologies](#ontology-data-modeling)
+- "Ontology" is sometimes used as a synonym for "data model", particularly for [data-modeling ontologies](#data-modeling-ontology)
 - "Schema" is sometimes used as a synonym for "data model". DDL defines database schemas. [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol) uses CSDL (Common Schema Definition Language). [RDFS](https://en.wikipedia.org/wiki/RDF_Schema) (Resource Description Framework Schema) is sometimes used in conjunction with [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language) to define data models using a [triple-graph](#data-modeling-paradigm) approach.
 - "Information Model" is sometimes used as a synonym for "data model", though some parties make subtle distinctions between "information model" and "data model", such as taking it to imply a data model that lies on the "conceptual" end of the implementation spectrum.
 
-The various synonyms of "data model" and the fact that some ontologies can be used as data models can be a significant source of confusion in the design and development of [digital models](#digital-model) for [digital twin systems](#digital-twin-system).
+The various synonyms of "data model" and the fact that some ontologies can be used as data models can be a significant source of confusion in the design and development of [stored representations](#stored-representation) for [digital twin systems](#digital-twin-system).
 
 ![Data Models and Ontologies](images/DataModel-Ontology.png)
 
@@ -150,23 +142,23 @@ The various synonyms of "data model" and the fact that some ontologies can be us
 
 ## Data Modeling in Digital Twin Systems
 
-[Data models](#digital-model) and [ontologies](#ontology) play various functional roles in the context of [digital twin systems](#digital-twin-systems).
+[Data models](#data-model) and [ontologies](#ontology) play various functional roles in [digital twin systems](#digital-twin-systems).
 
 ![Digital Twin Systems](images/DigitalTwinSystems.png)
 
 ![Data Modeling in Digital Twin Systems](images/DataModelingInDigitalTwinSystems.png)
 
-A __persistence__ [data model](#digital-model) uses a [data modeling language](#data-modeling-language) to describe data structures and types in a way that is compatible with the persistence technology. If the persistence technology is a relational database, this will be a SQL DDL "schema". Other persistence technologies will use different [data modeling paradigms](#data-modeling-paradigm) and [data modeling languages](#data-modeling-language).
+A __persistence__ [data model](#data-model) uses a [data modeling language](#data-modeling-language) to describe data structures and types in a way that is compatible with the persistence technology. If the persistence technology is a relational database, this will be a SQL DDL "schema". Other persistence technologies will use different [data modeling paradigms](#data-modeling-paradigm) and [data modeling languages](#data-modeling-language).
 
-[Service interfaces](#service-interface) embody a __logical__ [data model](#digital-model) that describes the data structures and types used by an API or protocol. This data model may differ from the lower-level persistence-specific data model, with the API implementation handling the mapping between the two. Examples include OData's CSDL (for entity-relationship style REST APIs) and GraphQL Schema (for property-graph style APIs). Other common ways of defining the "logical" data model of an API or protocol include JSON Schema and XML schema. Non-web-based APIs model data in programming-language-specific ways.
+[Service interfaces](#service-interface) embody a __logical__ [data model](#data-model) that describes the data structures and types used by an API or protocol. This data model may differ from the lower-level persistence data model, with the API implementation handling the mapping between the two. Examples include OData's CSDL (for entity-relationship style REST APIs) and GraphQL Schema (for property-graph style APIs). Other common ways of defining the "logical" data model of an API or protocol include JSON Schema and XML schema. Non-web-based APIs model data in programming-language-specific ways.
 
-__Conceptual__ [data models](#digital-model) are intended to be relatively free of the implementation-specific functional, performance, and scalability concerns of [service interfaces](#service-interface) and [stored representations](#stored-representation) so that they can focus on describing the real-world concepts in the domain of the [digital twin](#digital-twin). These data models may or may not be machine-readable, as they may only be used to guide the development of the GUI and lower-level data models.
+__Conceptual__ [data models](#data-model) are intended to be relatively free of the implementation-specific functional, performance, and scalability concerns of [service interfaces](#service-interface) and [stored representations](#stored-representation) so that they can focus on describing the real-world concepts in the domain of the [digital twin](#digital-twin). These data models may or may not be machine-readable, as they may only be used to guide the development of the GUI and lower-level data models.
 
-Conceptual data models may be used in a [digital twin system](#digital-twin-system) that is integrating information from multiple [stored representations](#stored-representation), each with its own persistence and logical data models. The digital twin system may have an [integration model/function](#integration-modelfunction) that provides access to data using a conceptual data model that is compatible with the overall [ontology](#ontology) of the digital twin system. . A variety of data modeling languages can be used for this function, including those for [data-modeling ontologies](#ontology-data-modeling).
+Conceptual data models may be used in a [digital twin system](#digital-twin-system) that is integrating information from multiple [stored representations](#stored-representation), each with its own persistence and logical data models. The digital twin system may have an [integration representation/function](#integration-representationfunction) that provides access to data using a conceptual data model that is compatible with the overall [ontology](#ontology) of the digital twin system. . A variety of data modeling languages can be used for this function, including those for [data-modeling ontologies](#data-modeling-ontology).
 
-Because the [integration model/function](#integration-modelfunction) may employ both [aggregation](#aggregation) and [federation](#federation) [integration strategies](#integration-strategy), data modeling languages compatible with integration-friendly service interfaces like [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol), [SPARQL](https://www.w3.org/TR/rdf-sparql-query/), and [GraphQL](https://graphql.org/) may be useful. These support both access to aggregated [integration models](#integration-modelfunction) and mapping to physical-separate federated [stored representations](#stored-representation).
+Because the [integration representation/function](#integration-representationfunction) may employ both [aggregation](#aggregation) and [federation](#federation) [integration strategies](#integration-strategy), data modeling languages compatible with integration-friendly service interfaces like [OData](https://en.wikipedia.org/wiki/Open_Data_Protocol), [SPARQL](https://www.w3.org/TR/rdf-sparql-query/), and [GraphQL](https://graphql.org/) may be useful. These support both access to aggregated [integration representations](#integration-representationfunction) and mapping to physically-separate federated [stored representations](#stored-representation).
 
-Most [data modeling languages](#data-modeling-language) can be used in many of these functional roles, and roles can be combined. A single data model could be used at the conceptual, service interface, and persistence levels if system requirements can be met. The [data-modeling ontology](#ontology-data-modeling) of the [integration service interface](#integration-service-interface) may be used as the overall [ontology](#ontology) of the digital twin system and the data model of the [integration model/function](#integration-modelfunction).
+Most [data modeling languages](#data-modeling-language) can be used in many of these functional roles, and roles can be combined. A single data model could be used at the conceptual, service interface, and persistence levels if system requirements can be met. The [data-modeling ontology](#data-modeling-ontology) of the [integration service interface](#integration-service-interface) may be used as the overall [ontology](#ontology) of the digital twin system and the data model of the [integration representation/function](#integration-representationfunction).
 
 ![Data Models and Ontologies](images/DataModel-Ontology.png)
 
@@ -198,6 +190,23 @@ See [data modeling in digital twin systems](#data-modeling-in-digital-twin-syste
 
 ---
 
+## Data-modeling Ontology
+
+> A data-modeling ontology is an [ontology](#ontology) that is also a conceptual [data model](#data-model).
+
+Data-modeling ontologies describe real-world [universals](https://en.wikipedia.org/wiki/Universal_(metaphysics)) using data structures and datatypes in a particular [data-modeling paradigm](#data-modeling-paradigm). Ideally, they also include precise human-readable definitions of the universals that they are describing.
+
+An incomplete list of examples of data-modeling ontologies relevant to digital twins includes:
+
+- [DTDL](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#digital-twins-definition-language)
+- [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language)
+
+Though data-modeling ontologies define data structures and datatypes that *can* be used to represent instances of the ontologically-defined entities, those data structures and types don't have to be used to store or transmit the data. Data stored in different data structures can refer to the terms defined by the ontology to clarify the semantics of the data. Data-modeling ontologies may prioritize unambiguous description of universals over optimization of data persistence.
+
+*Back to [Table of Contents](#table-of-contents).*
+
+---
+
 ## Data Modeling Paradigm
 
 > A data modeling paradigm is an approach to data modeling embodied in a set of fundamental constructs that govern how data is structured and typed.
@@ -219,37 +228,25 @@ See [data modeling in digital twin systems](#data-modeling-in-digital-twin-syste
 
 ---
 
-## Digital Model
+## Digital Representation
 
-> A [model](#model) consisting of structured digital information and/or computational algorithms.
+> A digital representation is a representation (aka "[model](#model)") of some subject matter consisting of structured digital information and/or computational algorithms.
 
-Before computers, we only modeled physical things using clay, wood, or plastic models. Nowadays, we use digital models.
+Before computers, we represented/modeled physical things using clay, wood, or plastic models or drawings on paper. Nowadays, we use digital representations, which may include 3D models, drawings, or lexical databases of various sorts.
 
-By "digital model" we do **not** mean "[data model](#data-model) although most digital models will have a "data model" or "schema" or "ontology" that describes the structure and meaning of the "instance data" in the digital model.
+***Alternate terms***
+"Digital model" can be used as a synonym for "digital representation."
 
 ***Narrower terms***
 
-- We divide digital models into two broad categories: [stored representations](#stored-representation) and [simulation models](#simulation-model).
+- We divide digital representations into two broad categories: [stored representations](#stored-representation) and [computational representations](#computational-representation).
 
-![Two categories of digital models](images/DigitalModels.png)
+![Two categories of stored representations](images/DigitalRepresentations.png?s=100)
 
 ***Related terms***
 
-- In the context of our definition of [digital twin](#digital-twin), a digital model's subject matter may include many entities and processes.
-- A digital model consists of one or more [digital model elements](#digital-model-element) that represent individual entities and processes in the subject matter.
+- In the context of our definition of [digital twin](#digital-twin), a digital representation's subject matter may include many entities and processes.
   
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
-## Digital Model Element
-
-> A digital model element is an identifiable part of a digital model that represents an individual real-world entity or process.
-
-***Alternate, non-preferred terms***
-
-- Every kind of [digital model](#digital) will have its own terminology to refer to its identifiable parts. Those terms are completely appropriate (and preferred) in the context of those specific kinds of digital models, but to the extent that we need discuss digital models in general, we need a single term for their parts. Common alternate terms include "record", "row", "object", "entity", "node", "triple", and even "digital twin" (defined somewhat differently than here.)
-
 *Back to [Table of Contents](#table-of-contents).*
 
 ---
@@ -289,13 +286,13 @@ Digital Twins are motivated by outcomes, tailored to use cases, powered by integ
 ***Related terms***
 
 - A digital twin is implemented in a [digital twin system](#digital-twin-system).
-- The [digital models](#digital-model) that constitute a digital twin are synchronized at a specified [frequency](#synchronization-frequency).
-- The [digital models](#digital-model) that constitute a digital twin are synchronized at a specified [fidelity](#synchronization-fidelity).
+- The [stored representations](#stored-representation) that constitute a digital twin are synchronized at a specified [frequency](#synchronization-frequency).
+- The [stored representations](#stored-representation) that constitute a digital twin are synchronized at a specified [fidelity](#synchronization-fidelity).
 - A digital twin has a corresponding [physical twin](#physical-twin).
 - A digital twin is part of a [cyber-physical system](#cyber-physical-system).
 
 [//]: # (This entry was written by DTC 3T Committee)
-[//]: # (Some other comment or metadata)
+[//]: # (Some other example comment or metadata)
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -352,12 +349,10 @@ Most digital twin services provide a [service interface](#service-interface) for
 - [Digital twin services](#digital-twin-services).
 - [Integration service interface](#integration-service-interface).
 - [Virtual representation](#virtual-representation).
-- [Integration model/function](#integration-modelfunction).
+- [Integration representation/function](#integration-representationfunction).
 - [Service interface](#service-interface).
-- [Simulation model](#simulation-model).
-- [Simulation modeling language](#simulation-modeling-language).
-- [Persistent model](#stored-representation).
-- [Data modeling language](#data-modeling-language).
+- [Computational representation](#computational-representation).
+- [Stored representation](#stored-representation).
 - [Synchronization mechanisms](#synchronization-mechanism).
 - [Data Interoperability](#data-interoperability).
 - [Management & Automation](#management-and-automation).
@@ -401,13 +396,13 @@ Federation only implies gathering enough centralized "index" information to use 
 
 ---
 
-## Integration Model/Function
+## Integration Representation/Function
 
-> The integration model/function is a subsystem of a [digital twin system](#digital-twin-system) that provides integrated and semantically-aligned access to the [digital models](#digital-model) of the digital twin system.
+> The integration representation/function is a subsystem of a [digital twin system](#digital-twin-system) that provides integrated and semantically-aligned access to the [stored representations](#stored-representation) of the digital twin system.
 
-The integration model/function may comprise a [stored representation](#stored-representation) for data [aggregation](#aggregation) and functions for data [federation](#federation).
+The integration representation/function may comprise a [stored representation](#stored-representation) for data [aggregation](#aggregation) and functions for data [federation](#federation).
 
-The integration model/function is closely associated with [digital thread](#digital-thread).
+The integration representation/function is closely associated with [digital thread](#digital-thread).
 
 See [data modeling in digital twin systems](#data-modeling-in-digital-twin-systems).
 
@@ -417,7 +412,7 @@ See [data modeling in digital twin systems](#data-modeling-in-digital-twin-syste
 
 ## Integration Service Interface
 
-> A integration service interface is a [service interface](#service-interface) for the [integration model/function](#integration-modelfunction) of a [digital twin system](#digital-twin-system).
+> A integration service interface is a [service interface](#service-interface) for the [integration representation/function](#integration-representationfunction) of a [digital twin system](#digital-twin-system).
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -429,7 +424,7 @@ See [data modeling in digital twin systems](#data-modeling-in-digital-twin-syste
 
 In software architecture, there are two main patterns for data integration: [aggregation](#aggregation) and [federation](#federation).
 
-Individual [stored representations](#stored-representation) (include the inputs and outputs of [simulation models](#simulation-model)) can be integrated by the [integration model/function] of a [digital twin system](#digital-twin-system).
+Individual [stored representations](#stored-representation) (including the inputs and outputs of [computational representations](#computational-representation)) can be integrated by the [integration representation/function](#integration-representationfunction) of a [digital twin system](#digital-twin-system).
 
 The [integration service interface](#integration-service-interface) of a [digital twin system](#digital-twin-system) can function as the [service interface](#service-interface) that exposes the overall digital twin system as a [stored representation](#stored-representation) which can in turn be aggregated by a "larger" digital twin system--a federation of digital twin systems.
 
@@ -439,7 +434,7 @@ The [integration service interface](#integration-service-interface) of a [digita
 
 ## Interventional Frequency
 
-> An interventional frequency is a [synchronization frequency](#synchronization-frequency) characterizing how often interventions in reality occur in order to synchronize reality with the state of a [digital model](#digital-model).
+> An interventional frequency is a [synchronization frequency](#synchronization-frequency) characterizing how often interventions in reality occur in order to synchronize reality with the state of a [stored representation](#stored-representation).
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -476,13 +471,13 @@ These systems could be cloud-based, on premises, embedded, mobile, distributed, 
 
 The __subject matter__ could be a car, a city, a supply chain, or a factory and its surroundings.
 
-The __modeling medium__ could be clay, wood, plastic, mathematical equations in a spreadsheet, or ink-on-paper. [Digital twins](#digital-twin) are mostly concerned with the "digital" medium--information stored as bits and bytes that can be loaded into a computer's working memory. In the context of digital twins, the unqualified use of "model" should be taken to mean [digital model](#digital-model).
+The __modeling medium__ could be clay, wood, plastic, mathematical equations in a spreadsheet, or ink-on-paper. [Digital twins](#digital-twin) are mostly concerned with the "digital" medium--information stored as bits and bytes that can be loaded into a computer's working memory.
 
 The __modeling perspective__ is the set simplifications made by the modeler. Every model simplifies its subject matter in some way, otherwise it would be an actual replica of the subject matter. It may be smaller in scale or lower in fidelity. It may only represent geometric aspects or also represent material composition. It may only represent functional or financial or legal aspects. It may represent a complex 3D form as a simple curve in space or as a set of triangles. It is common for representational models to represent "any and all aspects of the subject matter that are relevant to the use cases for the model" without explicitly stating their modeling perspective.
 
 When you see "____ model" sometimes the blank is filled with the subject matter (e.g. a "building model") and sometimes with a modeling media (e.g. a "clay model" or "digital model") and occasionally even with a modeling perspective (e.g. a "functional model", "physical model", or "financial model").
 
-Whether a digital model is a [stored representation](#stored-representation) or [simulation model](#simulation-model) can also be considered part of its modeling perspective.
+Whether a digital model is a [stored representation](#stored-representation) or [computational representation](#computational-representation) can also be considered part of its modeling perspective.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -496,7 +491,7 @@ Whether a digital model is a [stored representation](#stored-representation) or 
 
 ## Observational Frequency
 
-> An observational frequency is a [synchronization frequency](#synchronization-frequency) characterizing how often observations of reality are made and reflected in a [digital model](#digital-model).
+> An observational frequency is a [synchronization frequency](#synchronization-frequency) characterizing how often observations of reality are made and reflected in a [stored representation](#stored-representation).
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -516,7 +511,7 @@ A machine-readable ontology can be read by software to associate the semantics d
 
 Machine-readable ontologies should also include detailed human-readable definitions of their terms in order to be used effectively for meaningful semantic mapping.
 
-Ontologies generally do not specify data structures or data types used to represent particular entities, but [data-modeling ontologies](#ontology-data-modeling) do.
+Ontologies generally do not specify data structures or data types used to represent particular entities, but [data-modeling ontologies](#data-modeling-ontology) do.
 
 An ontology can be used in a [digital twin system](#digital-twin-system) to provide consistent semantics and support data integration among different [stored representations].
 
@@ -530,36 +525,19 @@ Also see wikipedia's entry for [ontology (information science)](https://en.wikip
 
 ---
 
-## Ontology (data modeling)
-
-> A data-modeling ontology is an [ontology](#ontology) that is also a conceptual [data model](#data-model).
-
-Data-modeling ontologies describe real-world [universals](https://en.wikipedia.org/wiki/Universal_(metaphysics)) using data structures and datatypes in a particular [data-modeling paradigm](#data-modeling-paradigm). Ideally, they also include precise human-readable definitions of the universals that they are describing.
-
-An incomplete list of examples of data-modeling ontologies relevant to digital twins includes:
-
-- [DTDL](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md#digital-twins-definition-language)
-- [OWL](https://en.wikipedia.org/wiki/Web_Ontology_Language)
-
-Though data-modeling ontologies define data structures and datatypes that *can* be used to represent instances of the ontologically-defined entities, those data structures and types don't have to be used to store or transmit the data. Data stored in different data structures can refer to the terms defined by the ontology to clarify the semantics of the data. Data-modeling ontologies may prioritize unambiguous description of universals over optimization of data persistence.
-
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
 ## Stored Representation
 
-> A persistent (digital) model is a [digital model](#digital-model) consisting of stored structured information, representing states of some subject matter.
+> A stored representation is a [model](#model) consisting of stored structured information, representing states of some subject matter.
 
-A stored representation can be queried, in contrast to a [simulation model](#simulation-model), which must be executed to produce output.
+A stored representation can be queried, in contrast to a [computational representation](#computational-representation), which must be executed to produce output.
 
-Examples of stored representations include databases of all kinds including relational databases, graph databases and other NoSQL databases, specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, IoT "data historians", etc.
+Stored representations can take the form of databases of all kinds including relational databases, graph databases and other NoSQL databases, IoT "data historians", specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, etc.
 
-![Two categories of digital models](images/DigitalModels.png)
+![Two categories of digital representations](images/DigitalRepresentations.png)
 
 ***Related terms***
 
-- [Persistent models](#stored-representation) are distinguished from [simulation models](#simulation-model), that contain algorithms.
+- [Stored representations](#stored-representation) are distinguished from [computational representations](#computational-representation), that contain algorithms.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -583,7 +561,7 @@ The physical twin may constitute physical systems of interest and their environm
 
 ## Real-to-virtual synchronization
 
-> Real-to-virtual synchronization (aka observational synchronization) is [synchronization](#synchronization) that causes a digital model to reflect new observations of the real world.
+> Real-to-virtual synchronization (aka observational synchronization) is [synchronization](#synchronization) that causes a [stored representation](#stored-representation) to reflect new observations of the real world.
 
 In other words, it is the process of mirroring the real world in the virtual representation, based on observation of the real-world.
 
@@ -593,7 +571,7 @@ In other words, it is the process of mirroring the real world in the virtual rep
 
 ## Real-World
 
-> In the context of [digital twins](#digital-twin), "real-world" refers to the subject matter of a [digital model](#digital-model) or [digital twin](#digital-twin) (which can be considered as a kind of digital model).
+> In the context of [digital twins](#digital-twin), "real-world" refers to the subject matter of a [stored representation](#stored-representation) or [digital twin](#digital-twin) (which can be considered as a kind of stored representation).
 
 The DTC definition of digital twin refers to "real-world entities and processes," where:
 
@@ -624,43 +602,41 @@ The concerns include privacy, security, safety, resilience, and reliability.
 
 ***Narrower terms***
 
-- Each [subsystem](#subsystems-of-a-digital-twin-system) may have its own service interface, e.g. a virtual representation service interface, or a service interface for a particular kind of digital model, or a visualization service interface, etc.
+- Each [subsystem](#subsystems-of-a-digital-twin-system) may have its own service interface, e.g. a virtual representation service interface, or a service interface for a particular kind of stored representation, or a visualization service interface, etc.
 
 *Back to [Table of Contents](#table-of-contents).*
 
 ---
 
-## Simulation Model
+## Computational Representation
 
-> A simulation model is an *executable* [digital model](#digital-model) consisting of computational algorithms and supporting data representing some subject matter from a dynamic perspective.
+> A computational representation is an *executable* [stored representation](#stored-representation) consisting of computational algorithms and supporting data representing some subject matter from a dynamic perspective.
 
-The subject matter of simulation model is typically a process or a set of entities with properties that are changing over the time-frame of interest.
+Examples include simulations and predictive analytics.
 
-When executed (aka “run”), simulation models often take [stored representations](#stored-representation) as input and their computational algorithms produce [stored representations](#stored-representation) as output.
+The subject matter of computational representation is typically a process or a set of entities with properties that are a function of time over the time-frame of interest.
 
-Simulation models may also use reference data, which is really just another example of a [stored representation](#stored-representation).
+When executed (aka “run”), computational representations often take [stored representations](#stored-representation) as input and their computational algorithms produce [stored representations](#stored-representation) as output.
 
-Examples of simulation models include Finite Element Analysis (FEA) models, Machine Learning models, and various other kinds of simulations based on mathematical equations, including those describing laws of physics and engineering.
+Computational representations may also use reference data, which is really just another example of a [stored representation](#stored-representation).
 
-![Two categories of digital models](images/DigitalModels.png)
+Examples of computational representations include Finite Element Analysis (FEA) models, Machine Learning models, and various other kinds of simulations based on mathematical equations, including those describing laws of physics and engineering.
+
+![Two categories of stored representations](images/DigitalRepresentations.png)
 
 ***Related terms***
 
-[Simulation models](#simulation-model) are distinguished from [stored representations](#stored-representation), that do not contain algorithms.
+[Computational representations](#computational-representation) are distinguished from [stored representations](#stored-representation), that do not contain algorithms.
 
-***Alternate terms***
-
-- [Computational model](#computational-model)
-  
 *Back to [Table of Contents](#table-of-contents).*
 
 ---
 
 ## Simulation Modeling Language
 
-> A simulation modeling language is a lexical or graphic language used to define [simulation models](#simulation-model)
+> A simulation modeling language is a lexical or graphic language used to define simulation models for [computational representations](#computational-representation).
 
-Examples include [Modelica](#https://www.modelica.org/), [Simulink](https://www.mathworks.com/products/simulink.html), etc. Simulations can also be coded in programming languages such as FORTRAN, C, Lisp, etc. Not all simulation models are defined via simulation modeling languages, because simulation techniques and technologies vary widely.
+Examples include [Modelica](#https://www.modelica.org/), [Simulink](https://www.mathworks.com/products/simulink.html), etc. Simulations can also be coded in programming languages such as FORTRAN, C, Lisp, etc. Not all computational representations are defined via simulation modeling languages, because simulation techniques and technologies vary widely.
 
 See wikipedia for [simulation languages](https://en.wikipedia.org/wiki/Simulation_language) and [simulation software](https://en.wikipedia.org/wiki/List_of_computer_simulation_software).
 
@@ -705,7 +681,7 @@ Synchronization is implemented via some [synchronization mechanism](#synchroniza
 
 > Synchronization Frequency is a frequency characterizing how often [synchronization](#synchronization) occurs
 
-The frequency will not be uniform for a digital twin. It may vary per [digital model](#digital-model) or even for [elements](#digital-model-element) within the digital model.
+The frequency will not be uniform for a digital twin. It may vary per [stored representation](#stored-representation) or even within the stored representation.
 
 ***Narrower terms***
 
@@ -738,11 +714,11 @@ A use case is typically associated with constraints or other requirements.
 
 > Not physically existing as such but made by software to appear to do so.
 
-We have used [google's definition of "virtual"](https://www.google.com/search?q=definition+of+virtual), because it captures the *intent* of a [digital twin](#digital-twin) to allow one to *virtually* interact with a portion of reality without *actually* directly interacting with it. Virtual observations are indirect (and may be of lower fidelity than actual in-person observations), but sensors may also provide more accurate, quantified observations that can be recorded for future reference. The digital virtual world is also more *accessible* that the real one, and it is *machine-readable*, so that computers can query it and perform analytics and simulations on it.
+We have used [google's definition of "virtual"](https://www.google.com/search?q=definition+of+virtual), because it captures the *intent* of a [digital twin](#digital-twin) to allow one to *virtually* interact with a portion of reality without *actually* directly interacting with it. Virtual observations are indirect (and may be of lower fidelity than actual in-person observations), but sensors may also provide more accurate, quantified observations that can be recorded for future reference. The digital virtual world is also more *accessible* that the real one, and it is *machine-readable*, so that computers can query it and perform analytics and simulations with it.
 
 "Virtual" is not technically a synonym for "digital", but in the context of a [digital twin](#digital-twin) the virtual world is implemented digitally, and the terms are used somewhat interchangeably. "Virtual" conveys more of the *intent* of creating an accessible replica of the real world and "digital" conveys an important *implementation detail*.
 
-Thus the intent of the term "[virtual representation](#virtual-representation)" was to convey a digital artefact that serves as a "virtual replica" of the real-world or a "virtual world" that mirrors the real world. The [virtual representation](#virtual-representation) consists of [digital models](#digital-model) with different [modeling perspectives](#model), but by "joining" them together with [digital threads](#digital-thread) we achieve a complex, multi-facetted model (aka "representation") that is greater than the sum of its parts. The [virtual representation](#virtual-representation) aspires to give the "appearance of" a reality that is richer than any individual [digital model](#digital-model).
+Thus the intent of the term "[virtual representation](#virtual-representation)" was to convey a digital artefact that serves as a "virtual replica" of the real-world or a "virtual world" that mirrors the real world. The [virtual representation](#virtual-representation) consists of [stored representations](#stored-representation) with different [modeling perspectives](#model), but by "joining" them together with [digital threads](#digital-thread) we achieve a complex, multi-facetted model (aka "representation") that is greater than the sum of its parts. The [virtual representation](#virtual-representation) aspires to give the "appearance of" a reality that is richer than any individual [stored representation](#stored-representation).
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -750,11 +726,9 @@ Thus the intent of the term "[virtual representation](#virtual-representation)" 
 
 ## Virtual Representation
 
-> A virtual representation is a complex, cohesive digital representation comprised of [stored representations](#stored-representation), [computations/simulations](#simulation-model), unstructured data, and supporting data which collectively provide an information-rich "virtual" experience of their their subject matter.
+> A virtual representation is a complex, cohesive [digital representation](#digital-representation) comprised of [stored representations](#stored-representation), [computational representations](#computational-representation), unstructured data, and supporting data which collectively provide an information-rich "virtual" experience of their their subject matter.
 
-The [integration model/function](#integration-modelfunction) of a [digital twin system](#digital-twin-system) "[virtually](#virtual)" joins information of various kinds together into the cohesive, multi-faceted, representation of reality that we call a "virtual representation".
-
-In "virtual representation", the adjective "virtual" is not modifying "representation". The "representation" is an __actual__ representation that provides a virtual experience of the subject matter represented by the representation.
+The [integration representation/function](#integration-representationfunction) of a [digital twin system](#digital-twin-system) "[virtually](#virtual)" joins information of various kinds together into the cohesive, multi-faceted, representation of reality that we call a "virtual representation".
 
 ***Alternate terms***
 
@@ -767,7 +741,7 @@ In "virtual representation", the adjective "virtual" is not modifying "represent
 
 ## Virtual-to-real synchronization
 
-> Virtual-to-real synchronization (aka interventional synchronization) is [synchronization](#synchronization) that intervenes in the real world to make it more-closes match a digital model of a desired state.
+> Virtual-to-real synchronization (aka interventional synchronization) is [synchronization](#synchronization) that intervenes in the real world to make it more-closes match a [stored representation](#stored-representation) of a desired state.
 
 In other words, it is the process of mirroring the virtual representation into the real world, through some intervention in the real world.
 

@@ -66,7 +66,7 @@ The formal definition should be a complete sentence following the template
 
 For example
 
-`> A kangaroo is a marsupial that lives in Australia, hops, and is a good boxer.` 
+`> A kangaroo is a marsupial that lives in Australia, hops, and is a good boxer.`
 
 (but create a hyperlink to "marsupial" if it is defined elsewhere in the glossary.)
 
