@@ -610,7 +610,7 @@ The concerns include privacy, security, safety, resilience, and reliability.
 
 ## Computational Representation
 
-> A computational representation is an *executable* [stored representation](#stored-representation) consisting of computational algorithms and supporting data representing some subject matter from a dynamic perspective.
+> A computational representation is an *executable* [digital representation](#digital-representation) consisting of computational algorithms and supporting data representing some subject matter from a dynamic perspective.
 
 Examples include simulations and predictive analytics.
 
