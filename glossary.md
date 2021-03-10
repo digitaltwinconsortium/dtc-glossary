@@ -741,7 +741,7 @@ The [integration representation/function](#integration-representationfunction) o
 
 ## Virtual-to-real synchronization
 
-> Virtual-to-real synchronization (aka interventional synchronization) is [synchronization](#synchronization) that intervenes in the real world to make it more-closes match a [stored representation](#stored-representation) of a desired state.
+> Virtual-to-real synchronization (aka interventional synchronization) is [synchronization](#synchronization) that intervenes in the real world to make it more-closely match a [stored representation](#stored-representation) of a desired state.
 
 In other words, it is the process of mirroring the virtual representation into the real world, through some intervention in the real world.
 
