@@ -13,6 +13,7 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 ## Table of Contents
 
 - [Aggregation](#aggregation)
+- [Computational Representation](#computational-representation)
 - [Cyber-Physical System](#cyber-physical-system)
 - [Data Interoperability](#data-interoperability)
 - [Data Model](#data-model)
@@ -41,15 +42,14 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 - [Modeling Fidelity](#modeling-fidelity)
 - [Observational Frequency](#observational-frequency)
 - [Ontology](#ontology)
-- [Stored Representation](#stored-representation)
 - [Physical Twin](#physical-twin)
 - [Real-to-virtual synchronization](#real-to-virtual-synchronization)
 - [Real-World](#real-world)
 - [Security, Trust, and Governance](#security-trust-and-governance)
 - [Service Interface](#service-interface)
-- [Computational Representation](#computational-representation)
 - [Simulation Modeling Language](#simulation-modeling-language)
 - [Subsystems of a Digital Twin System](#subsystems-of-a-digital-twin-system)
+- [Stored Representation](#stored-representation)
 - [Synchronization](#synchronization)
 - [Synchronization Fidelity](#synchronization-fidelity)
 - [Synchronization Frequency](#synchronization-frequency)
@@ -67,6 +67,30 @@ We suggest starting with the term [Digital Twin](#digital-twin) and following li
 > Aggregation is an [integration strategy](#integration-strategies) that involves copying data to gather it into a centralized location.
 
 Miriam Webster defines the verb “aggregate” as “to collect or gather into a mass or whole”. In software architecture, aggregation implies gathering, copying, and possibly transforming information from multiple systems into a single centralized system.
+
+*Back to [Table of Contents](#table-of-contents).*
+
+---
+
+## Computational Representation
+
+> A computational representation is an *executable* [digital representation](#digital-representation) consisting of computational algorithms and supporting data representing some subject matter from a dynamic perspective.
+
+Examples include simulations and predictive analytics.
+
+The subject matter of computational representation is typically a process or a set of entities with properties that are a function of time over the time-frame of interest.
+
+When executed (aka “run”), computational representations often take [stored representations](#stored-representation) as input and their computational algorithms produce [stored representations](#stored-representation) as output.
+
+Computational representations may also use reference data, which is really just another example of a [stored representation](#stored-representation).
+
+Examples of computational representations include Finite Element Analysis (FEA) models, Machine Learning models, and various other kinds of simulations based on mathematical equations, including those describing laws of physics and engineering.
+
+![Two categories of stored representations](images/DigitalRepresentations.png)
+
+***Related terms***
+
+[Computational representations](#computational-representation) are distinguished from [stored representations](#stored-representation), that do not contain algorithms.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -239,7 +263,7 @@ Before computers, we represented/modeled physical things using clay, wood, or pl
 
 ***Narrower terms***
 
-- We divide digital representations into two broad categories: [stored representations](#stored-representation) and [computational representations](#computational-representation).
+- We can generally divide digital representations into two broad categories: [stored representations](#stored-representation) and [computational representations](#computational-representation), though there can be some overlap between those categories.
 
 ![Two categories of stored representations](images/DigitalRepresentations.png?s=100)
 
@@ -525,24 +549,6 @@ Also see wikipedia's entry for [ontology (information science)](https://en.wikip
 
 ---
 
-## Stored Representation
-
-> A stored representation is a [model](#model) consisting of stored structured information, representing states of some subject matter.
-
-A stored representation can be queried, in contrast to a [computational representation](#computational-representation), which must be executed to produce output.
-
-Stored representations can take the form of databases of all kinds including relational databases, graph databases and other NoSQL databases, IoT "data historians", specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, etc.
-
-![Two categories of digital representations](images/DigitalRepresentations.png)
-
-***Related terms***
-
-- [Stored representations](#stored-representation) are distinguished from [computational representations](#computational-representation), that contain algorithms.
-
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
 ## Physical Twin
 
 > A physical twin is a set of real-world entities and processes that corresponds to a [digital twin](#digital-twin)
@@ -608,30 +614,6 @@ The concerns include privacy, security, safety, resilience, and reliability.
 
 ---
 
-## Computational Representation
-
-> A computational representation is an *executable* [digital representation](#digital-representation) consisting of computational algorithms and supporting data representing some subject matter from a dynamic perspective.
-
-Examples include simulations and predictive analytics.
-
-The subject matter of computational representation is typically a process or a set of entities with properties that are a function of time over the time-frame of interest.
-
-When executed (aka “run”), computational representations often take [stored representations](#stored-representation) as input and their computational algorithms produce [stored representations](#stored-representation) as output.
-
-Computational representations may also use reference data, which is really just another example of a [stored representation](#stored-representation).
-
-Examples of computational representations include Finite Element Analysis (FEA) models, Machine Learning models, and various other kinds of simulations based on mathematical equations, including those describing laws of physics and engineering.
-
-![Two categories of stored representations](images/DigitalRepresentations.png)
-
-***Related terms***
-
-[Computational representations](#computational-representation) are distinguished from [stored representations](#stored-representation), that do not contain algorithms.
-
-*Back to [Table of Contents](#table-of-contents).*
-
----
-
 ## Simulation Modeling Language
 
 > A simulation modeling language is a lexical or graphic language used to define simulation models for [computational representations](#computational-representation).
@@ -651,6 +633,24 @@ See wikipedia for [simulation languages](https://en.wikipedia.org/wiki/Simulatio
 Examples are listed in the entry for [digital twin system](#digital-twin-system).
 
 Subsystems of a digital twin system may have [service interfaces](#service-interface)
+
+*Back to [Table of Contents](#table-of-contents).*
+
+---
+
+## Stored Representation
+
+> A stored representation is a [digital representation](#digital-representation) consisting of stored structured information, representing states of some subject matter.
+
+A stored representation can be queried, in contrast to a [computational representation](#computational-representation), which must be executed to produce output.
+
+Stored representations can take the form of databases of all kinds including relational databases, graph databases and other NoSQL databases, IoT "data historians", specialized CAD, BIM, and GIS repositories, 3D meshes derived from photogrammetry and/or point clouds, satellite or radar imagery, spreadsheets, intelligent 2D drawings and schematics, etc.
+
+![Two categories of digital representations](images/DigitalRepresentations.png)
+
+***Related terms***
+
+- [Stored representations](#stored-representation) are distinguished from [computational representations](#computational-representation), that contain algorithms.
 
 *Back to [Table of Contents](#table-of-contents).*
 
@@ -726,7 +726,7 @@ Thus the intent of the term "[virtual representation](#virtual-representation)" 
 
 ## Virtual Representation
 
-> A virtual representation is a complex, cohesive [digital representation](#digital-representation) comprised of [stored representations](#stored-representation), [computational representations](#computational-representation), unstructured data, and supporting data which collectively provide an information-rich "virtual" experience of their their subject matter.
+> A virtual representation is a complex, cohesive [digital representation](#digital-representation) comprised of [stored representations](#stored-representation), [computational representations](#computational-representation), unstructured data, and supporting data which collectively provide an information-rich "virtual" experience of their subject matter.
 
 The [integration representation/function](#integration-representationfunction) of a [digital twin system](#digital-twin-system) "[virtually](#virtual)" joins information of various kinds together into the cohesive, multi-faceted, representation of reality that we call a "virtual representation".
 
