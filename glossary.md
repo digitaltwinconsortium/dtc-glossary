@@ -726,7 +726,7 @@ Thus the intent of the term "[virtual representation](#virtual-representation)" 
 
 ## Virtual Representation
 
-> A virtual representation is a complex, cohesive [digital representation](#digital-representation) comprised of [stored representations](#stored-representation), [computational representations](#computational-representation), unstructured data, and supporting data which collectively provide an information-rich "virtual" experience of their subject matter.
+> A virtual representation is a complex, cohesive [digital representation](#digital-representation) comprised of [stored representations](#stored-representation), [computational representations](#computational-representation), and supporting data which collectively provide an information-rich "virtual" experience of their subject matter.
 
 The [integration representation/function](#integration-representationfunction) of a [digital twin system](#digital-twin-system) "[virtually](#virtual)" joins information of various kinds together into the cohesive, multi-faceted, representation of reality that we call a "virtual representation".
 
