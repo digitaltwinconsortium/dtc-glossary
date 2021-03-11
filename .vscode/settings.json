@@ -11,6 +11,7 @@
         "antilopine",
         "datatypes",
         "itot",
-        "modelfunction"
+        "modelfunction",
+        "representationfunction"
     ]
 }
