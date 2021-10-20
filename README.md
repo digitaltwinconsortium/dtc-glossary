@@ -20,7 +20,7 @@ Sometimes less is more. Some relevant questions to ask about a candidate term in
 
 ## Template for new entries
 
-Authors of new entries should follow the regular process for submitting pull request with detailed information per standard Github change request process.
+Authors of new entries should reference Github's Contributor Guidelines.
 
 ## {Term}
 
