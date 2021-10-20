@@ -20,7 +20,7 @@ Sometimes less is more. Some relevant questions to ask about a candidate term in
 
 ## Template for new entries
 
-Authors of new entries should reference Github's Contributor Guidelines.
+Authors of new entries should reference [Github's Contributor Guidelines](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors).
 
 ## {Term}
 
