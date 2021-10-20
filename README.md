@@ -20,7 +20,42 @@ Sometimes less is more. Some relevant questions to ask about a candidate term in
 
 ## Template for new entries
 
-Authors of new entries should reference [Github's Contributor Guidelines](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors).
+Before submitting new entries, author's should first reference: [Github's Contributor Guidelines](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors).
+
+Only the formal definition following the template > A {term} is a [{broader term}](#broader-term) that {differentiating clause}. is required--other content is optional.
+
+## {Term}
+
+> A {term} is a [{broader term}](#broader-term) that {differentiating clause}.
+
+{Elaboration. In other words... Analogous to...}
+
+{Examples... Examples include...}
+
+{Counter-Examples... ____ is not a {term}}
+
+{Motivation. Why {term} is important for digital twins...}
+
+{Pictures: ![name of picture](images\PreferredTerm.png) }
+
+***Alternate terms***
+
+- [{synonym term}](#synonym-term) {Explanation of synonym}
+- [{non-term}](#non-preferred-term) {Explanation of why it is not preferred}
+
+***Narrower terms***
+
+- [{narrower term 1}(#narrower-term-1)]
+- [{narrower term 2}(#narrower-term-2)]
+
+***Related terms***
+
+- A {term} {relational verb phrase} a {related term}.
+- A {term} {relational verb phrase} a {related term}.
+
+*Back to the (Table of Contents)(#Table-of-Contents)
+
+---
 
 ## {Term}
 
